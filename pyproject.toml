@@ -1,0 +1,60 @@
+# cSpell:words Wyant swtor glog opencv pylint pytest mypy
+
+[tool.poetry]
+name = "swtor-glog"
+version = "0.1.0"
+description = "Extract SWTOR Guild Log data into machine-readable formats"
+authors = ["Matthew Wyant"]
+license = "GPL-3.0-plus"
+readme = "README.md"
+packages = [{include = "swtor_glog"}]
+classifiers = [
+    # "Development Status :: 1 - Planning",
+    # "Development Status :: 2 - Pre-Alpha",
+    # "Development Status :: 3 - Alpha",
+    "Development Status :: 4 - Beta",
+    # "Development Status :: 5 - Production/Stable",
+    # "Development Status :: 6 - Mature",
+    # "Development Status :: 7 - Inactive",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Utilities"
+]
+
+
+[tool.poetry.scripts]
+swtor-glog = 'swtor_glog.__main__:cli'
+
+
+[tool.pylint.basic]
+good-names-rgxs = ["^[a-z_][a-z]?"]
+no-docstring-rgx = "^_|[Tt]est|[Mm]ock"
+
+
+[tool.poetry.dependencies]
+python = "^3.10"
+PyAutoGUI = "^0.9.53"
+opencv-python = "^4.6.0.66"
+click = "^8.1.3"
+rich = "^12.6.0"
+Pillow = "^9.2.0"
+pytesseract = "^0.3.10"
+matplotlib = "^3.6.1"
+py7zr = "^0.20.2"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.8.0"
+pylint = "^2.15.3"
+pytest = "^7.1.3"
+mypy = "^0.981"
+jupyterlab = "^3.4.8"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
